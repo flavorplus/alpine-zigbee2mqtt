@@ -21,10 +21,9 @@ jobs:
           context: .
           tags: myimage:latest
           outputs: type=local,dest=/tmp/container
-      - run: ls -la /tmp
-      - run: ls -la /tmp/container
+      - run: ls -la /tmp/container/app
       - name: Upload artifact
         uses: actions/upload-artifact@v2
         with:
-          name: myimage
-          path: /tmp/myimage.tar
+          name: zigbee2mqtt
+          path: /tmp/container/app/zigbee2mqtt.tar.gz
