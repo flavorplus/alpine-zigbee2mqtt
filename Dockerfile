@@ -52,6 +52,6 @@ RUN echo "$COMMIT" > dist/.hash
 RUN cp -r ./node_modules /app/output/node_modules && \
     cp -r ./dist /app/output/dist
 
-RUN tar -czf zigbee2mqtt.tar.gz /app/output/*
+RUN tar -C /app/output/ -czf zigbee2mqtt.tar.gz .
 
 CMD [ "/bin/sh"]
