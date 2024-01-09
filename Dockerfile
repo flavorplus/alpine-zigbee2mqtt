@@ -1,11 +1,10 @@
-FROM node:16.13-alpine
+FROM node:20-alpine
 
 RUN apk add --no-cache git python3 make && \
     wget -q http://musl.cc/armv6-linux-musleabihf-cross.tgz && \
     mkdir -p /usr/xcc && \
     tar -C /usr/xcc -xvf armv6-linux-musleabihf-cross.tgz && \
     rm armv6-linux-musleabihf-cross.tgz
-
 
 WORKDIR /app
 
